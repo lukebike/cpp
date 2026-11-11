@@ -35,14 +35,31 @@ class TemperaturSensor : public Sensor{
         };
 
         void skrivUt(){
-            std::cout << "Namnet på sensorn är " << getNamn() << " och värdet är " << getVarde() << " och larmvärdet är " << larm();
+            std::cout << "Namnet på sensorn är " << getNamn() << " och värdet är " << getVarde() << " och larmvärdet är " << larm() << "\n";
         }
 };
 
-int main(){
+int hittaHogstaVarde(TemperaturSensor* sensors, int antalSensorer){
 
-    TemperaturSensor s1 = {"Normal", 13.5, 15};
-    TemperaturSensor s2 = {"Alarming", 200, 100};
-    s1.skrivUt();
-    s2.skrivUt();
+    int highestValue = 0;
+    for(int i = 0; i < antalSensorer; i++){
+        if(sensors[i].getVarde() > sensors[highestValue].getVarde()){
+            highestValue = i;
+        }
+    }
+    return highestValue;
+}
+
+int main(){
+    int overstigerLarmVarde = 0;
+    TemperaturSensor sensors[] = {{"Sensor1", 2.0, 10}, {"Sensor2", 50.0, 10}, {"Sensor3", 1.0, 10}, {"Sensor4", 20.0, 10}};
+    int antalSensorer = sizeof(sensors) / sizeof(sensors[0]);
+    for(int i = 0; i < antalSensorer; i++){
+        sensors[i].skrivUt();
+        if(sensors[i].larm() == 0){
+            overstigerLarmVarde++;
+        }
+    }
+    std::cout << "The index with the highest value is " << hittaHogstaVarde(sensors, antalSensorer) << "\n";
+    std::cout << "The amount of sensors with an alarm is " << overstigerLarmVarde << "\n";
 }

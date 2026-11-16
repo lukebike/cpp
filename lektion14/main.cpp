@@ -2,7 +2,7 @@
 
 
 class Sensor {
-    public: virtual void skriv_ut(){std::cout << "Sensor\n";}
+    public: virtual void skriv_ut() = 0;
 };
 
 class TemperaturSensor : public Sensor {

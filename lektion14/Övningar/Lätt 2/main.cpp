@@ -10,3 +10,6 @@ implementerar de rena virtuella funktionerna eller inte.
 
 // 1. Ja, då en virtual funktion har ingen implementation i bas klassen; Sant
 // 2. Sant
+// 3. Det stämmer
+// 4. Nej
+// 5. Sant

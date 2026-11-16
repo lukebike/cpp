@@ -128,3 +128,5 @@ public:
     }
 
 };
+
+// Refaktorerat både klasser att använda en gemensam Sensor basklass

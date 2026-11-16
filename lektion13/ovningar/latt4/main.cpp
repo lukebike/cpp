@@ -39,8 +39,8 @@ public:
 
 int main(void)
 {
-    TemperaturSensor t1 = {"Hello", 12.3, 100};
-    TemperaturSensor t2 = {"Faulty", 5, 3};
+    TemperaturSensor t1 = { "Hello", 12.3, 100 };
+    TemperaturSensor t2 = { "Faulty", 5, 3 };
     std::cout << "My name is " << t1.getNamn() << " and my value is " << t1.getVarde() << " and my alarm value is " << t1.larm() << "\n";
     std::cout << "My name is " << t2.getNamn() << " and my value is " << t2.getVarde() << " and my alarm value is " << t2.larm() << "\n";
 };

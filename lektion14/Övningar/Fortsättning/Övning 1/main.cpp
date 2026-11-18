@@ -17,7 +17,7 @@ public:
         return namn;
     }
 
-    virtual bool larmar() const = 0;
+    virtual bool larmar() const { return true; }
 };
 
 class TemperaturSensor : public Sensor {
